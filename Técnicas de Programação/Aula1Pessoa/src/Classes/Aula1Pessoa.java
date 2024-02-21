@@ -36,7 +36,7 @@ public class Aula1Pessoa {
         // se escrever sout e apertar ctrl ele autocompleta o print
         
         System.out.println(mae.Apresentar());
-        System.out.println(mae.ApresentarFilhos());
+        // System.out.println(mae.ApresentarFilhos());
         mae.nomesFilhos[0] = "Maria";
         mae.nomesFilhos[1] = "João";
         System.out.println(mae.ApresentarFilhos());
