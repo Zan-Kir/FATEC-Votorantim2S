@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
     package aula2;
+
+import java.util.Arrays;
+
 /**
  *
  * @author Alunos
@@ -32,20 +35,33 @@ public class VetoresMatrizes {
         
         
         //Exercicio 2
-        vM1.concatenaVetorEmMatriz(
+        int[][] matrizConcatenada;
+        String imprimeMatriz = "";
+        matrizConcatenada = vM1.concatenaVetorEmMatriz(
                 new int[] {0,1,2,3,4,5,6,7},
-                new int[] {0,1,2,3,4,5,6,7},
+                new int[] {7,6,5,4,3,2,1,0},
                 new int[] {0,1,2,3,4,5,6,7});
         
-        System.out.println("");
+        for (int i = 0; i < 8; i++) {
+			imprimeMatriz += Arrays.toString(matrizConcatenada[i]);
+		}
+        System.out.println("Matriz concatenada: " + imprimeMatriz);
+        
+        //Exercicio 3
+
+        int decimal =  vM1.converteBinario(new int[] {0, 1, 1, 1, 1, 1, 1, 1});
+        System.out.println("O numero decimal e: " + decimal);
+        
+        //Exercicio 4
+        int[] binario = vM1.converteDecimal(127);
+        System.out.println("O numero binario e: " + Arrays.toString(binario));
     }
-    
     //Aqui vai os métodos/funções
+  
     
     public int[] inverteVetor(int[] vetorEntrada) {
         /* Crie um metodo que inverta o vetor de entrada
-        e retorne o vetor invertido
-        */
+        e retorne o vetor invertido.  */
         int[] vetorSaida = new int[8];
         for (int i = 0; i < 8; i++) {
             vetorSaida[7 - i] = vetorEntrada[i];
@@ -66,5 +82,27 @@ public class VetoresMatrizes {
             matrizSaida[i][2] = vetor3[i];
         }
         return matrizSaida;
+    }
+    
+    public int converteBinario(int[] valorBinario) {
+        /*Crie um método que converta um número binário que é um array de 8 posições em um número decimal */
+        int valorDecimal = 0;
+        
+        for(int i = 0; i < 8; i++) {
+            valorDecimal += valorBinario[7 - i] * Math.pow(2, i);
+        }
+        return valorDecimal;
+    }
+    
+    public int[] converteDecimal(int numDecimal) {
+        /*Crie um método que converta um número decimal em um número binário que é um array com 8 posições. */
+        int[] numBinario = new int [8];
+        
+        for(int i = 0; i < 8; i++) {
+            numBinario[7 - i] += numDecimal % 2;
+            numDecimal /= 2;
+        }
+        
+        return numBinario;
     }
 }
