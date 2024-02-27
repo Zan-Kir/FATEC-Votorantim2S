@@ -15,7 +15,30 @@ public class Pessoa {
     String nome;
     int qntFilhos, qntIrmaos;
     String[] nomesFilhos = new String[20];
+    String[] nomesIrmaos = new String[10];
+    private String cpf;
     
+    /* Método Construtor */
+    
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+    public Pessoa(String nome, String cpf) {
+        this(nome); //chama o construtor Pessoa(String nome).
+        this.cpf = cpf; //torna obrigatorio o uso do cpf para instanciar pessoa.
+    }
+    
+    /* Método Setter */
+    //metodos setters não precisam ter retorno por isso usa void.
+    public void setCpf(String cpf) {
+        if(this.cpf == null) { //verifica se o cpf é nulo, se V pode atribuir
+            this.cpf = cpf;
+        } //somente em construtores nao usa o ponto "."
+    }
+    
+    public String getCpf() { //metodos get nao precisam de parametro.
+        return this.cpf; //é necessario o retorno.
+    }
     
     /*Métodos da Classe
     Método "Apresentar", responde com o Nome
@@ -41,6 +64,24 @@ public class Pessoa {
         }
         else {
             return "Não possui filhos.";
+        }
+    }
+    
+    public String ApresentarIrmaos() {
+        String resposta = "Meus Irmaos são: ";
+        int qntIrmaosAux = 0;
+        
+        for(int i = 0; i < 10; i++) {
+            if (nomesIrmaos[i] != null) {
+                qntIrmaosAux++;
+                resposta += nomesIrmaos[i] + ", ";
+            }
+        }
+        if (qntIrmaosAux > 0) {
+            return resposta + "Quantidade de irmãos: " + qntIrmaosAux;
+        }
+        else {
+            return "Não possui irmãos.";
         }
     }
 }

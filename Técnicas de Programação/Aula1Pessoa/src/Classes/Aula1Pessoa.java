@@ -19,14 +19,24 @@ public class Aula1Pessoa {
         // Código da Aplicação vai aqui dentro
         
         Pessoa pai;
-        pai = new Pessoa();
+        pai = new Pessoa("Rodrigo", "333333");
         pai.nome = "Rodrigo";
         pai.qntFilhos = 2;
-        pai.qntIrmaos = 3;
+        pai.qntIrmaos = 4;
+        
         System.out.println(pai.Apresentar()
                 + " E possui " + pai.qntIrmaos + " irmãos.");
+        pai.nomesIrmaos[0] =  "José";
+        pai.nomesIrmaos[1] =  "Roberto";
+        pai.nomesIrmaos[2] =  "Cleiton";
+        pai.nomesIrmaos[3] =  "Matheus";
+        System.out.println(pai.ApresentarIrmaos());
         
-        Pessoa mae = new Pessoa();
+        System.out.println("CPF Pai: " + pai.getCpf());
+        pai.setCpf("666666");
+        System.out.println("Novo CPF Pai: " + pai.getCpf());
+        
+        Pessoa mae = new Pessoa("444444");
         mae.nome = "Paula";
         mae.qntFilhos = 2;
         
