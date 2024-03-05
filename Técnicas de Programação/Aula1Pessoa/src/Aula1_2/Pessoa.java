@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Classes;
+package Aula1_2;
 
 /**
  *
@@ -16,10 +16,10 @@ public class Pessoa {
     int qntFilhos, qntIrmaos;
     String[] nomesFilhos = new String[20];
     String[] nomesIrmaos = new String[10];
-    private String cpf;
+    private String cpf; //variaveis privadas sao representadas por "-"
     
     /* Método Construtor */
-    
+    //construtores não possuem retorno
     public Pessoa(String nome) {
         this.nome = nome;
     }
@@ -36,6 +36,7 @@ public class Pessoa {
         } //somente em construtores nao usa o ponto "."
     }
     
+    /* Método Getter */
     public String getCpf() { //metodos get nao precisam de parametro.
         return this.cpf; //é necessario o retorno.
     }
