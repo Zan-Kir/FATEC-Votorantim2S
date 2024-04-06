@@ -54,8 +54,9 @@ public class ListaLigada {
             for(int i = 0; i < indice -1; i++) {
                   atual = atual.getProximoNo();
             }
-            novo.setProximoNo(atual.getProximoNo());
-            atual.setProximoNo(novo);
+            
+            novo.setProximoNo(atual.getProximoNo()); //esse faz o atual apontar pro proximo
+            atual.setProximoNo(novo); // esse faz o anterior apontar pro atual
         }
         
         //define ultimo nó se for colocado no final da lista
