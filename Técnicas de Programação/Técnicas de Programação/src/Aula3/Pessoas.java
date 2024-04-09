@@ -19,7 +19,7 @@ public class Pessoas {
     private Pessoas pai;
     private int numFilhos = 0;
     private Pessoas[] listaFilhos = new Pessoas[10];
-    private Pessoa[] listaIrmaos=new Pessoa[10];   
+    private Pessoas[] listaIrmaos=new Pessoas[10];   
     private int qtdIrmaos=0;
     //******************************//
     

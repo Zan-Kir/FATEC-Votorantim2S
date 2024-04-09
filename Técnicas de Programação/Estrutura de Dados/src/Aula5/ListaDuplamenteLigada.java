@@ -15,21 +15,21 @@ public class ListaDuplamenteLigada {
     
     public ListaDuplamenteLigada(){
         tamanhoLista=0;
-        primeiroNo= ultimoNo = null;
+        primeiroNo = ultimoNo = null;
     }
     
     public void adicionar(Object elemento){
         //Adiciona um nó na ultima posição.
         //Para o 1º Nó
-        NoDuplo aux = new NoDuplo(elemento, null, null);
+        NoDuplo novo = new NoDuplo(elemento, null, null);
             
         if(primeiroNo==null && ultimoNo==null){
-            primeiroNo = ultimoNo = aux;
+            primeiroNo = ultimoNo = novo;
             tamanhoLista++;
         }
         else{// Para os demais nós
-            ultimoNo.setProximoNo(aux);
-            aux.setAnteriorNo(ultimoNo);
+            ultimoNo.setProximoNo(novo); //o proximo do ultimo aponta para o novo
+            novo.setAnteriorNo(ultimoNo);// o anterior do novo aponta para o ultimo
             tamanhoLista++;
         }
     }

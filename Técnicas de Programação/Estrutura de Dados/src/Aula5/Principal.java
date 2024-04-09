@@ -36,8 +36,8 @@ public class Principal {
         listaOrdenada.adicionaOrdenado(2, TipoOrdenacao.CRESCENTE);
         listaOrdenada.adicionaOrdenado(1, TipoOrdenacao.CRESCENTE);
         listaOrdenada.adicionaOrdenado(3, TipoOrdenacao.CRESCENTE);
-    /*     listaOrdenada.adicionaOrdenado(1, TipoOrdenacao.CRESCENTE);
-*/
+        listaOrdenada.adicionaOrdenado(1, TipoOrdenacao.CRESCENTE);
+
     }
     
 }
