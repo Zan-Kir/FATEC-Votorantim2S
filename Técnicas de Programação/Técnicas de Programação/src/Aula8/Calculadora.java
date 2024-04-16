@@ -22,7 +22,8 @@ public class Calculadora {
                 + "1 - Soma \n"
                 + "2 - Subtracao \n"
                 + "3 - Multiplicacao \n"
-                + "4 - Divisao";
+                + "4 - Divisao \n"
+                + "0 - Sair";
         System.out.println(imprime);
         comando = input.nextInt();
         while (comando != 0) {

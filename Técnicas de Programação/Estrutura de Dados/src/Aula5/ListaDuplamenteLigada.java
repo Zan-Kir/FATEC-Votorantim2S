@@ -188,7 +188,18 @@ public class ListaDuplamenteLigada {
         }
         
         if (tipo == TipoOrdenacao.DESCRESCENTE) {
+            if (tamanhoLista == 0 || valor >= (int) primeiroNo.getInfo()) {
+                adicionar(valor, 0);
+                return;
+            }
             
+            NoDuplo atual = primeiroNo;
+            int indice = 0;
+            while(atual.getProximoNo() != null && (int) atual.getProximoNo().getInfo() > valor) {
+                atual = atual.getProximoNo();
+                indice++;
+            }
+            adicionar(valor, indice +1);
         }
         System.out.println(this.imprimirLista());
     }

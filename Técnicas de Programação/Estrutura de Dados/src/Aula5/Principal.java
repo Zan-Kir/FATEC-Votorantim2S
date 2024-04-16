@@ -37,6 +37,17 @@ public class Principal {
         listaOrdenada.adicionaOrdenado(1, TipoOrdenacao.CRESCENTE);
         listaOrdenada.adicionaOrdenado(3, TipoOrdenacao.CRESCENTE);
         listaOrdenada.adicionaOrdenado(1, TipoOrdenacao.CRESCENTE);
+        
+        ListaDuplamenteLigada listaOrdenada2 = new ListaDuplamenteLigada();
+        listaOrdenada2.adicionaOrdenado(33, TipoOrdenacao.DESCRESCENTE);
+        listaOrdenada2.adicionaOrdenado(8, TipoOrdenacao.DESCRESCENTE);
+        listaOrdenada2.adicionaOrdenado(7, TipoOrdenacao.DESCRESCENTE);
+        listaOrdenada2.adicionaOrdenado(2, TipoOrdenacao.DESCRESCENTE);
+        listaOrdenada2.adicionaOrdenado(5, TipoOrdenacao.DESCRESCENTE);
+        listaOrdenada2.adicionaOrdenado(3, TipoOrdenacao.DESCRESCENTE);
+        listaOrdenada2.adicionaOrdenado(23, TipoOrdenacao.DESCRESCENTE);
+        listaOrdenada2.adicionaOrdenado(30, TipoOrdenacao.DESCRESCENTE);
+        listaOrdenada2.adicionaOrdenado(60, TipoOrdenacao.DESCRESCENTE);
 
     }
     
