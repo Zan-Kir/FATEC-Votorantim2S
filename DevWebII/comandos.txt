@@ -1,0 +1,3 @@
+ng new nome-app -cria novo app
+ng serve - starta local host
+ng g c header - ng generate component nomeComponente
