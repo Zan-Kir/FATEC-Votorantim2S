@@ -174,6 +174,7 @@ public class ListaDuplamenteLigada {
             
             if (tamanhoLista == 0 || valor <= (int) primeiroNo.getInfo()) {
                 adicionar(valor, 0); // define se for o primeiro elemento da lista
+                System.out.println(this.imprimirLista());
                 return;
             }
             
@@ -190,6 +191,7 @@ public class ListaDuplamenteLigada {
         if (tipo == TipoOrdenacao.DESCRESCENTE) {
             if (tamanhoLista == 0 || valor >= (int) primeiroNo.getInfo()) {
                 adicionar(valor, 0);
+                System.out.println(this.imprimirLista());
                 return;
             }
             

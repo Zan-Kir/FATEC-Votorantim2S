@@ -48,6 +48,19 @@ public class Principal {
         listaOrdenada2.adicionaOrdenado(23, TipoOrdenacao.DESCRESCENTE);
         listaOrdenada2.adicionaOrdenado(30, TipoOrdenacao.DESCRESCENTE);
         listaOrdenada2.adicionaOrdenado(60, TipoOrdenacao.DESCRESCENTE);
+        
+        ListaCircular listaCircular = new ListaCircular();
+        listaCircular.adicionar("Melancia", 0);
+        listaCircular.adicionar("Pitaya");
+        listaCircular.adicionar("Guarana", 1);
+        listaCircular.adicionar("Kiwi");
+        listaCircular.adicionar("Maracuja", 1);
+  //      listaCircular.remover(0);
+  //      listaCircular.remover(1);
+        System.out.println(listaCircular.imprimirLista("", listaCircular.primeiroNo, 0));
+        
+        
+
 
     }
     
