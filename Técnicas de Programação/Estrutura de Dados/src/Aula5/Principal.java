@@ -55,8 +55,8 @@ public class Principal {
         listaCircular.adicionar("Guarana", 1);
         listaCircular.adicionar("Kiwi");
         listaCircular.adicionar("Maracuja", 1);
-  //      listaCircular.remover(0);
-  //      listaCircular.remover(1);
+        listaCircular.remover(0);
+        listaCircular.remover(1);
         System.out.println(listaCircular.imprimirLista("", listaCircular.primeiroNo, 0));
         
         
