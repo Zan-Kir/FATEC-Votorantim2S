@@ -1,16 +1,17 @@
 
-package listacirculargui;
+package Lista;
 
+import Lista.Ex_ListaCircularDuplamenteLigada;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 
-public class ListaCircularGUI extends javax.swing.JFrame {
+public class ListaCircular extends javax.swing.JFrame {
 
     Ex_ListaCircularDuplamenteLigada lista;
     int indiceCorrente=0;
     
-    public ListaCircularGUI() {
+    public ListaCircular() {
         initComponents();
         
         lista=new Ex_ListaCircularDuplamenteLigada();
@@ -70,6 +71,11 @@ public class ListaCircularGUI extends javax.swing.JFrame {
         lblValor.setText("jLabel1");
 
         btoAvancar.setText("Avançar");
+        btoAvancar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btoAvancarMouseClicked(evt);
+            }
+        });
         btoAvancar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btoAvancarActionPerformed(evt);
@@ -90,6 +96,11 @@ public class ListaCircularGUI extends javax.swing.JFrame {
         jLabel1.setText("Índice:");
 
         btoRemover.setText("Remover");
+        btoRemover.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btoRemoverMouseClicked(evt);
+            }
+        });
         btoRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btoRemoverActionPerformed(evt);
@@ -99,6 +110,11 @@ public class ListaCircularGUI extends javax.swing.JFrame {
         txtbValor.setText("Hello World");
 
         btoAdicionar.setText("Adicionar");
+        btoAdicionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btoAdicionarMouseClicked(evt);
+            }
+        });
         btoAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btoAdicionarActionPerformed(evt);
@@ -246,6 +262,18 @@ public class ListaCircularGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jList1MouseClicked
 
+    private void btoAvancarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btoAvancarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btoAvancarMouseClicked
+
+    private void btoAdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btoAdicionarMouseClicked
+        lista.adicionar(txtbValor, Integer.parseInt(txtbIndice.getText()));
+    }//GEN-LAST:event_btoAdicionarMouseClicked
+
+    private void btoRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btoRemoverMouseClicked
+        lista.remover(Integer.parseInt(txtbIndice.getText()));
+    }//GEN-LAST:event_btoRemoverMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -276,7 +304,7 @@ public class ListaCircularGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListaCircularGUI().setVisible(true);
+                new ListaCircular().setVisible(true);
             }
         });
     }

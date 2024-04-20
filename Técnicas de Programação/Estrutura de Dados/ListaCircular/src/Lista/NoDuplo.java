@@ -1,5 +1,5 @@
 
-package listacirculargui;
+package Lista;
 
 public class NoDuplo {
     private NoDuplo proximo, anterior;
