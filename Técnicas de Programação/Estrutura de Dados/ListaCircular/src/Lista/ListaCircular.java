@@ -267,7 +267,7 @@ public class ListaCircular extends javax.swing.JFrame {
     }//GEN-LAST:event_btoAvancarMouseClicked
 
     private void btoAdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btoAdicionarMouseClicked
-        lista.adicionar(txtbValor, Integer.parseInt(txtbIndice.getText()));
+        lista.adicionar(txtbValor.getText(), (Integer.parseInt(txtbIndice.getText())));
     }//GEN-LAST:event_btoAdicionarMouseClicked
 
     private void btoRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btoRemoverMouseClicked
