@@ -53,7 +53,7 @@ where f.FILME = 'Constantine'
 /* 10 */
 Select cat.NOME_CATEGORIA from CATEGORIA cat
 left join FILME f on f.COD_CATEGORIA = cat.COD_CATEGORIA
-where f.COD_CATEGORIA = null
+where f.COD_CATEGORIA is null
 
 select * from FILME
 select * from LOCACOES
