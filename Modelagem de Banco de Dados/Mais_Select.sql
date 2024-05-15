@@ -142,3 +142,4 @@ Select '_' + ltrim(' AbCD ') + '_'
 /* Exemplo */
 Select '_' + rtrim(' AbCD ') + '_'
 
+Select getdate()
