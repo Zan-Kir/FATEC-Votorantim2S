@@ -7,6 +7,8 @@ import java.io.Serializable;
 public class Motocicleta implements Serializable {
     //atributos
     private String marca, modelo;
+
+
     private float velocidade;
     
     //construtor
@@ -31,4 +33,11 @@ public class Motocicleta implements Serializable {
         return this.velocidade;
     }
     
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
 }

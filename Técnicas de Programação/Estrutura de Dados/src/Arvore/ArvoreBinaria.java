@@ -28,10 +28,7 @@ public class ArvoreBinaria {
             return resposta;
         }
     }
-    public void addNoOrdenado(int valor) {
-        addNoOrdenado(valor, raiz);
-    }
-    private void addNoOrdenado(int valor, NoBinario no) {
+    public void addNoOrdenado(int valor, NoBinario no) {
         //se valor for menor que o valor do nó adiciona a esquerda
         //se nao adiciona a direita
         
@@ -50,42 +47,14 @@ public class ArvoreBinaria {
             }
         }
     }
-    public void imprimirPreOrdem() {
-        imprimirPreOrdem(raiz);
+    public void imprimirArvore() {
+        imprimirArvore(raiz);
     }
-    private void imprimirPreOrdem(NoBinario no) {
+    private void imprimirArvore(NoBinario no) {
         System.out.println("No: " + no.getInfo());
         if(no.getEsquerdaNo() != null)
-            imprimirPreOrdem(no.getEsquerdaNo());
+            imprimirArvore(no.getEsquerdaNo());
         if(no.getDireitaNo() != null)
-            imprimirPreOrdem(no.getDireitaNo());
+            imprimirArvore(no.getDireitaNo());
     }
-    
-    public void imprimirEmOrdem() {
-        imprimirEmOrdem(raiz);
-    }
-    
-    private void imprimirEmOrdem(NoBinario no) {
-        if (no.getEsquerdaNo() != null) {
-            imprimirEmOrdem(no.getEsquerdaNo());
-        }
-        System.out.println("No: " + no.getInfo());
-        if (no.getDireitaNo() != null) {
-            imprimirEmOrdem(no.getDireitaNo());
-        }
-
-    }
-    
-    public void imprimirPosOrdem() {
-        imprimirPosOrdem(raiz);
-    }
-    private void imprimirPosOrdem(NoBinario no) {
-        if (no.getEsquerdaNo() != null) {
-            imprimirEmOrdem(no.getEsquerdaNo());
-        }
-        if (no.getDireitaNo() != null) {
-            imprimirEmOrdem(no.getDireitaNo());
-        }
-        System.out.println("No: " + no.getInfo());
-    } 
 }
