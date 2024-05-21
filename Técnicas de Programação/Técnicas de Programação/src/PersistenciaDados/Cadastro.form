@@ -41,20 +41,19 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="velocidade" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtVelocidade" pref="248" max="32767" attributes="0"/>
+                              <Component id="marca" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="48" max="32767" attributes="0"/>
+                              <Component id="txtMarca" min="-2" pref="248" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="modelo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="39" max="32767" attributes="0"/>
-                                  <Component id="txtModelo" min="-2" pref="248" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="modelo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="velocidade" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="marca" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtMarca" min="-2" pref="248" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtVelocidade" max="32767" attributes="0"/>
+                                  <Component id="txtModelo" pref="248" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -79,9 +78,9 @@
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
