@@ -1,12 +1,11 @@
 import { Component, ViewChild, AfterViewInit, ChangeDetectorRef} from '@angular/core';
-import { MaterialModule } from '../material.module';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../_models/dialog/dialog.component';
-import { MatInput } from '@angular/material/input';
-import { Category, DataService } from '../_models/category';
-import { CategoryEditComponent } from '../category.edit/category.edit.component';
 import { MatTable } from '@angular/material/table';
-import { ElementDialogComponent } from '../_models/element-dialog/element-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MaterialModule } from '../material.module';
+import { DialogComponent } from '../_models/dialog/dialog.component';
+import { Category } from '../_models/category';
+import { CategoryEditComponent } from '../category.edit/category.edit.component';
+
 
 export interface PeriodicElement {
   position: number;
@@ -31,7 +30,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [MaterialModule, DialogComponent, MatInput, CategoryEditComponent],
+  imports: [MaterialModule, DialogComponent, CategoryEditComponent],
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
  })
@@ -43,28 +42,28 @@ export class CategoryComponent {
   
   @ViewChild(MatTable) tableRef!: MatTable<any>;
 
-  //editedData: any;
   public dataSource = ELEMENT_DATA;
     
-  constructor(private dialog: MatDialog, 
-              private dataService: DataService,
-              private cdr: ChangeDetectorRef) { }
-  
+  constructor(private dialog: MatDialog) { }
   
   openDialog(inputCategory: Category | null): void {
       const dialogRef = this.dialog.open(CategoryEditComponent, {
         disableClose: true,
-        data: {editableCategory: inputCategory, actionName: this.blnEdit ? 'Editar' : 'Criar'}
+        data: {editableCategory: inputCategory, 
+               actionName: this.blnEdit ? 'Editar' : 'Criar'}
       });
 
       dialogRef.afterClosed().subscribe(resp => {
         if (resp !== undefined) {
           const tableResp : Category = resp;
 
+          console.log(resp.position -1);
+
           if (this.blnEdit && this.dataSource.map(p => p.position).includes(resp.position)) {
               this.dataSource[resp.position -1] = resp;
               this.tableRef.renderRows();
-              console.log('Elemento EDITADO!');
+
+              console.log('Elemento Editado!');
           } 
           else {
             
@@ -73,20 +72,14 @@ export class CategoryComponent {
             console.log(positionExists);
 
             if (! this.blnEdit && resp.position > 0) {
-              this.cdr.detectChanges();
               this.dataSource.push(resp);
               this.tableRef.renderRows();
               console.log('Elemento Incluido!');
             }
           }
           
-          // Se os dados foram retornados do modal, atualize o dataSource
-          console.log(tableResp.position)
-          console.log(tableResp.name)
-          console.log(tableResp.weight)
-          console.log(tableResp.symbol)
-
         } else {
+
           console.log('Elemento não EDITADO!');
         }
       });
@@ -95,43 +88,9 @@ export class CategoryComponent {
 
   public editElement(inputCategory: Category | null): void  {
       this.blnEdit = true;
+      console.log(inputCategory);
       this.openDialog(inputCategory);
-    /*
-      const dialogRef = this.dialog.open(CategoryEditComponent, {
-        disableClose: true,
-        data: {editableCategory: inputCategory, actionName: this.blnEdit ? 'Editar' : 'Criar'}
-      });
-
-      dialogRef.afterClosed().subscribe(resp => {
-        if (resp !== undefined) {
-          if (this.dataSource.map(p => p.position).includes(resp.position)) {
-              this.dataSource[resp.position -1] = resp;
-              this.tableRef.renderRows();
-              console.log('Elemento EDITADO!');
-          } 
-          else {
-            if (this.blnEdit) {
-              this.cdr.detectChanges();
-              this.dataSource.push(resp);
-              this.tableRef.renderRows();
-              console.log('Elemento Incluido!');
-            }
-          }
-          
-          // Se os dados foram retornados do modal, atualize o dataSource
-          const tableResp : Category = resp;
-
-          console.log(tableResp.name)
-          console.log(tableResp.position)
-          console.log(tableResp.weight)
-          console.log(tableResp.symbol)
-
-        } else {
-          console.log('Elemento não EDITADO!');
-        }
-      });
-      */
-  }
+    }
 
   public deleteElement(deleteCategory: Category | null): void  {
     this.dialog.open(DialogComponent, {disableClose: true, 
@@ -154,22 +113,5 @@ export class CategoryComponent {
 
     this.openDialog(inputCategory);
 
-    /*
-    this.dialog.open(CategoryEditComponent, {disableClose: true, 
-      data: {editableCategory: inputCategory, actionName: 'Incluir'}}).afterClosed().subscribe(
-      resp => {
-      if(resp){
-        console.log('Elemento incluido !');
-        this.cdr.detectChanges();
-
-        this.dataSource.push(resp);
-        
-        this.tableRef.renderRows();
-      } else {
-        console.log('Elemento Cancelado !');
-      }
-    } 
-   )    
-  */
   }
 }

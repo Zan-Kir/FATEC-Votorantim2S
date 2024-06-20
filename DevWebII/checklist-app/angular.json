@@ -25,10 +25,11 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -100,6 +101,6 @@
     }
   },
   "cli": {
-    "analytics": "d39bcad7-d339-4db2-ab0b-525a409a9a4d"
+    "analytics": false
   }
 }

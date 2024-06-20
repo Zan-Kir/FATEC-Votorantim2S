@@ -1,10 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { FooterComponent } from './footer/footer.component';
-import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
+import { Header2Component } from "./header2/header2.component";
 
 
 @Component({
@@ -12,14 +9,23 @@ import { MaterialModule } from './material.module';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, ReactiveFormsModule,
-      CommonModule,  FooterComponent, HeaderComponent,
-      MaterialModule 
-    ],
-   
+    imports: [FooterComponent, 
+              MaterialModule, Header2Component]
 })
 
-export class AppComponent {
-  public events: string[] = [];
-  public opened: boolean = false;
+@Injectable({ providedIn: 'root' })
+
+export class AppComponent implements OnInit {
+
+  myVariable: string = '';
+
+  constructor () {
+    
+  }
+
+  ngOnInit(): void {
+
+             
+  }
+  
 }
